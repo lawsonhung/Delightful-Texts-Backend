@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_161254) do
+ActiveRecord::Schema.define(version: 2019_09_19_181143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ice_cream_orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "ice_cream_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ice_cream_id"], name: "index_ice_cream_orders_on_ice_cream_id"
+    t.index ["user_id"], name: "index_ice_cream_orders_on_user_id"
+  end
+
+  create_table "ice_creams", force: :cascade do |t|
+    t.string "flavor"
+    t.string "toppings"
+    t.boolean "hot_chocolate_fudge"
+    t.string "size"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -22,4 +40,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_161254) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "ice_cream_orders", "ice_creams"
+  add_foreign_key "ice_cream_orders", "users"
 end
