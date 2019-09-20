@@ -1,8 +1,8 @@
 class Api::V1::AuthController < ApplicationController
-  # skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create]
 
   def create
-    
+    # byebug
     @user = User.find_by(username: params[:username])
     #User#authenticate comes from BCrypt
 
@@ -21,7 +21,8 @@ class Api::V1::AuthController < ApplicationController
 
   def user_login_params
     # params { user: {username: 'Chandler Bing', password: 'hi' } }
-    params.require(:user).permit(:username, :password)
+    # params.require(:user).permit(:username, :password)
+    params.permit(:username, :password)
   end
 
 end
