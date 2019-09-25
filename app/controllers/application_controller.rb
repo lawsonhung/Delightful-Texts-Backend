@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   def encode_token(payload)
     # payload => { beef: 'steak' }
     # should store secret in env variable
-    JWT.encode(payload, 'my_s3cr3t')
+    JWT.encode(payload, secret)
     # jwt string: "eyJhbGciOiJIUzI1NiJ9.eyJiZWVmIjoic3RlYWsifQ._IBTHTLGX35ZJWTCcY30tLmwU9arwdpNVxtVU0NpAuI"
   end
 
@@ -13,13 +13,17 @@ class ApplicationController < ActionController::API
     request.headers['Authorization']
   end
 
+  def secret
+    # ENV['jwt_secret']
+  end
+
   def decoded_token
     # token => "eyJhbGciOiJIUzI1NiJ9.eyJiZWVmIjoic3RlYWsifQ._IBTHTLGX35ZJWTCcY30tLmwU9arwdpNVxtVU0NpAuI"
     if auth_header
       token = auth_header.split(' ')[1]
       # headers: { 'Authorization': 'Bearer <token>' }
       begin
-        JWT.decode(token, 'my_s3cr3t')[0]
+        JWT.decode(token, secret)[0]
         # JWT.decode => [{ "beef"=>"steak" }, { "alg"=>"HS256" }]
         # [0] gives us the payload { "beef"=>"steak" }
       rescue JWT::DecodeError
