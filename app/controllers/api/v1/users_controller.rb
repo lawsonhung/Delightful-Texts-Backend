@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  # skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create]
 
   def profile
     # If you want to use Serializer
@@ -14,7 +14,7 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-   
+    # byebug
     if @user.valid?
 
       @token = encode_token(user_id: @user.id)
@@ -31,6 +31,7 @@ class Api::V1::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :password)
+    # params.permit(:username, :password)
   end
 
 end
