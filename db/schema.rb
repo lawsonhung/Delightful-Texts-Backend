@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 2019_09_19_181143) do
 
   create_table "ice_creams", force: :cascade do |t|
     t.string "flavor"
-    t.string "toppings"
-    t.boolean "hot_chocolate_fudge"
     t.string "size"
+    t.boolean "m_and_ms"
+    t.boolean "peanuts"
+    t.boolean "sprinkles"
+    t.boolean "hot_chocolate_fudge"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

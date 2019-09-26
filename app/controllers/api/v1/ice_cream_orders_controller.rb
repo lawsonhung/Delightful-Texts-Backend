@@ -1,4 +1,5 @@
 class Api::V1::IceCreamOrdersController < ApplicationController
+  skip_before_action :authorized
 
   def index
     @ice_cream_orders = IceCreamOrder.all
