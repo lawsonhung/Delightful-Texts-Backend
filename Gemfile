@@ -46,4 +46,8 @@ gem "active_model_serializers", "~> 0.10.10"
 
 gem "faker", "~> 2.3"
 
+# Figaro hides keys, like API keys and ENV variables
 gem 'figaro'
+
+# Twilio sends and receives texts
+gem 'twilio-ruby'
