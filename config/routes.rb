@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       post '/profile', to: 'users#profile'
     end
   end
+  # resources :twilio
+  post 'twilio/voice' => 'twilio#voice'
 end
