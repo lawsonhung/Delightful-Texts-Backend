@@ -14,7 +14,7 @@ class Api::V1::IceCreamsController < ApplicationController
   private
 
   def ice_cream_params
-    params.require(:ice_cream).permit(:flavor, :size, :m_and_ms, :peanuts, :sprinkles, :hot_chocolate_fudge)
+    params.require(:ice_cream).permit(:flavor, :size, :m_and_ms, :peanuts, :sprinkles, :hot_chocolate_fudge, :user_id, :phone_number)
   end
 
 end
