@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_09_19_181143) do
     t.boolean "peanuts"
     t.boolean "sprinkles"
     t.boolean "hot_chocolate_fudge"
+    t.integer "user_id"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

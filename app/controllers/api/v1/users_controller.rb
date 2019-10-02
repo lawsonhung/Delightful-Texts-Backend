@@ -13,6 +13,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
+    # byebug
     @user = User.create(user_params)
     # byebug
     if @user.valid?
@@ -30,8 +31,11 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
-    # params.permit(:username, :password)
+    # In fetch, because of require(:user), body of post request has to have "user" object
+    # params.require(:user).permit(:username, :password)
+
+    # Works for logging in and creating a new user
+    params.permit(:username, :password)
   end
 
 end

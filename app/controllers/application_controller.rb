@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :authorized
+  # protect_from_forgery with: :exception
 
   def encode_token(payload)
     # payload => { beef: 'steak' }

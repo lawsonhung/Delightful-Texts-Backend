@@ -7,6 +7,8 @@ class CreateIceCreams < ActiveRecord::Migration[6.0]
       t.boolean :peanuts
       t.boolean :sprinkles
       t.boolean :hot_chocolate_fudge
+      t.integer :user_id
+      t.string :phone_number
 
       t.timestamps
     end
