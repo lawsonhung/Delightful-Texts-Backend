@@ -8,6 +8,10 @@ Make sure your database is up and running, either with PostgreSQL or DB Browser 
 
 If you go to [http://localhost:3000](http://localhost:3000), you should see that the rails server is running.
 
+Front end:
+
+https://github.com/lawsonhung/delightful-texts-frontend
+
 ## README initialized from rails
 
 This README would normally document whatever steps are necessary to get the
