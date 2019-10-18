@@ -1,5 +1,9 @@
 # README
 
+Front end:
+
+https://github.com/lawsonhung/delightful-texts-frontend
+
 In the project directory, you can run:
 
 ### `rails s`
@@ -7,10 +11,6 @@ In the project directory, you can run:
 Make sure your database is up and running, either with PostgreSQL or DB Browser for SQLLite
 
 If you go to [http://localhost:3000](http://localhost:3000), you should see that the rails server is running.
-
-Front end:
-
-https://github.com/lawsonhung/delightful-texts-frontend
 
 ## README initialized from rails
 
