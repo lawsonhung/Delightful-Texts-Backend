@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
     # payload => { beef: 'steak' }
     # should store secret in env variable
     JWT.encode(payload, secret)
-    # jwt string: "eyJhbGciOiJIUzI1NiJ9.eyJiZWVmIjoic3RlYWsifQ._IBTHTLGX35ZJWTCcY30tLmwU9arwdpNVxtVU0NpAuI"
+    # jwt string: "eyJhbGciOiJIUzI1NiJ9.eyJiZWVmIjoic3RlYWsifQ._IBTHTLGX35ZJWTCcY30tLmwU9arwdpNVxtVU0NpAuI" 
   end
 
   def auth_header
