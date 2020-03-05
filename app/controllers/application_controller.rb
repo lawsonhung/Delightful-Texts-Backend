@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
 
   def encode_token(payload)
     # payload => { beef: 'steak' }
-    # should store secret in env variable
+    # should store secret in env variable 
     JWT.encode(payload, secret)
     # jwt string: "eyJhbGciOiJIUzI1NiJ9.eyJiZWVmIjoic3RlYWsifQ._IBTHTLGX35ZJWTCcY30tLmwU9arwdpNVxtVU0NpAuI"
   end
