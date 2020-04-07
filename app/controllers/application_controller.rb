@@ -15,7 +15,8 @@ class ApplicationController < ActionController::API
   end
 
   def secret
-    ENV['delightful_texts_jwt_secret']
+    #ENV['delightful_texts_jwt_secret']
+    "badbreathbuffalo"
   end
 
   def decoded_token
