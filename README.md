@@ -4,6 +4,10 @@ Front end:
 
 https://github.com/lawsonhung/delightful-texts-frontend
 
+Demo:
+
+https://youtu.be/vMZTea1-GBA
+
 In the project directory, you can run:
 
 ### `rails s`
