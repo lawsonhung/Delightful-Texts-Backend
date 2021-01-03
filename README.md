@@ -12,6 +12,10 @@ Demo:
 
 https://youtu.be/vMZTea1-GBA
 
+Uploaded to:
+
+https://delightful-texts-backend-2.herokuapp.com
+
 In the project directory, you can run:
 
 ### `rails s`
